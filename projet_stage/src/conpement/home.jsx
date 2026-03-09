@@ -1,8 +1,8 @@
-import {link} from 'react-router';
-import{Calendar,FIleText,Phone,Alertcircle,Building2,User} from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Calendar, FileText, Phone, AlertCircle, Building2, Users } from "lucide-react";
 
-export default function Home(){
-    const services = [
+export default function Home() {
+  const services = [
     { title: "الوثائق الإدارية", icon: FileText, link: "/electronic-services" },
     { title: "حجز موعد", icon: Calendar, link: "/appointment" },
     { title: "تقديم شكاية", icon: AlertCircle, link: "/complaint" },
@@ -21,19 +21,19 @@ export default function Home(){
       id: 1,
       title: "افتتاح مركز ثقافي جديد بأكدال",
       date: "2026-03-08",
-      image: "",
+      image: "https://images.unsplash.com/photo-1763146741552-a37625b0529b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxNb3JvY2NvJTIwY3VsdHVyYWwlMjBjZW50ZXJ8ZW58MXx8fHwxNzczMDUzMjU1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     },
     {
       id: 2,
       title: "حملة تنظيف واسعة في أحياء المقاطعة",
       date: "2026-03-07",
-      image: "",
+      image: "https://images.unsplash.com/photo-1613169465179-533a5d1ce175?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxNb3JvY2NvJTIwbWFya2V0JTIwYmF6YWFyfGVufDF8fHx8MTc3Mjk5MTcyMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     },
     {
       id: 3,
       title: "إطلاق خدمات إلكترونية جديدة",
       date: "2026-03-05",
-      image: "",
+      image: "https://images.unsplash.com/photo-1757163587904-14cdadfda026?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxNb3JvY2NvJTIwdHJhZGl0aW9uYWwlMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzczMDUzMjU1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     },
   ];
 
@@ -43,17 +43,17 @@ export default function Home(){
     { title: "يوم تطوعي للنظافة", date: "25 مارس 2026" },
   ];
 
- return (
+  return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="relative h-[500px] bg-gradient-to-l from-red-600 to-green-600 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <ImageWithFallback
+          <img
             src="https://images.unsplash.com/photo-1566486135404-f25bba08c169?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSYWJhdCUyME1vcm9jY28lMjBjaXR5c2NhcGV8ZW58MXx8fHwxNzczMDUyODEyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             alt="الرباط"
             className="w-full h-full object-cover"
           />
         </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
           <div className="text-white text-center w-full">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">مرحبا بكم</h1>
@@ -71,7 +71,6 @@ export default function Home(){
         </div>
       </section>
 
-      {/* Quick Services */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-8">خدمات سريعة</h2>
@@ -90,7 +89,6 @@ export default function Home(){
         </div>
       </section>
 
-      {/* Latest News */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-8">
@@ -99,6 +97,7 @@ export default function Home(){
               عرض الكل ←
             </Link>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {news.map((item) => (
               <Link
@@ -106,7 +105,7 @@ export default function Home(){
                 to={`/news/${item.id}`}
                 className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow"
               >
-                <ImageWithFallback
+                <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-48 object-cover"
@@ -121,7 +120,6 @@ export default function Home(){
         </div>
       </section>
 
-      {/* Events */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-8">الفعاليات القادمة</h2>
@@ -141,7 +139,6 @@ export default function Home(){
         </div>
       </section>
 
-      {/* Emergency Numbers */}
       <section className="py-12 bg-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-8">أرقام الطوارئ</h2>
@@ -157,7 +154,6 @@ export default function Home(){
         </div>
       </section>
 
-      {/* Links Section */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -169,6 +165,7 @@ export default function Home(){
               <h3 className="text-2xl font-bold mb-2">المجلس البلدي</h3>
               <p className="opacity-90">تعرف على أعضاء المجلس ونشاطاته</p>
             </Link>
+
             <Link
               to="/my-district"
               className="bg-gradient-to-l from-green-600 to-green-700 text-white rounded-lg p-8 hover:shadow-lg transition-shadow"
