@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import './home.jsx'
 import './news.jsx'
+import './council.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
